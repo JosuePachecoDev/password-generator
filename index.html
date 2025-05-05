@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar contraseñas seguras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ph">
+        <h1>Genera contraseñas aleatorias</h1>
+        <p>Puedes elegir la plataforma para la que necesitas una contraseña o personalizar las características de tu nueva contraseña segura.</p>
+    </div>
+    <div class="ph">
+        <div class="tool-container">
+            <div class="password">
+                <p id="generated-password">Click en "Generar"</p>
+            </div>
+            <div>
+                <button class="main-button" onclick="trigger()">Generar</button>
+                <button class="secondary-button" onclick="copiarContraseña()" id="copy-button">Copiar</button>    
+            </div>
+            <div class="customization">
+                <div class="feature">
+                    <label for="symbol-checkbox">Incluir símbolos:</label>
+                    <input type="checkbox" id="symbol-checkbox" checked>
+                </div>
+                <div class="feature">
+                    <label for="uppercase-checkbox">Incluir mayúsculas:</label>
+                    <input type="checkbox" id="uppercase-checkbox" checked>
+                </div>
+                <div class="feature">
+                    <label for="lowercase-checkbox">Incluir minúsculas:</label>
+                    <input type="checkbox" id="lowercase-checkbox" checked>
+                </div>
+                <div class="feature">
+                    <label for="number-checkbox">Incluir números:</label>
+                    <input type="checkbox" id="number-checkbox" checked>
+                </div>
+                <div class="feature length">
+                    <label>Longitud de caracteres:</label>
+                    <div>
+                        <input type="range" min="4" max="36" id="input-caracters-length">
+                        <label for="input-caracters-length" id="label-from-length">12</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+            <p>El mundo está cada vez más conectado, pues internet nos ha permitido trascender fronteras en segundos. Un estudio de <a href="#">statista</a> revela que aproximadamente <strong>5.560 millones</strong> de personas estaban conectadas a internet. Y yo quiero hacerte una pregunta: ¿Cuántas de esas personas crees que son ciberdelincuentes? Erróneamente determinados <a href="#">"hackers"</a>.</p>
+            <p>En el mundo hay delicuentes que pueden abrir tu casa sin necesidad de llaves, abrir tu caja fuerte sin ingresar la clave y robar tu dinero... En internet hay personas que pueden entrar a tus cuentas, manipular tu información y también robarte tu dinero. </p>
+            <p>Cada plataforma tiene sus propias normas para almacenar los credenciales de inicio de sesión de una cuenta. Pero acá te presento algunas normas generales, te recomiendo que las tomes en cuenta.</p>
+            <h2>Nombre de usuario de inicio de sesión</h2>
+            <p>Un nombre de usuario no puede contener signos de interrogación, dos puntos ni espacios en blanco. Pero ¿porqué? Bien, algunos <a target="_blank" href="https://es.wikipedia.org/wiki/Carácter_(tipo_de_dato)">caracteres</a> tienen significados concretos para el <a target="_blank" href="https://www.avast.com/es-es/c-what-is-a-web-browser">navegador</a>, por ejemplo:</p>
+            <ul>
+                <li><b>"?"</b> indica inicios de <a target="_blank" href="https://support.google.com/google-ads/answer/6277564?hl=es-419">parámetros</a> en una <a target="_blank" href="https://support.google.com/google-ads/answer/14095?hl=es-419&sjid=1036963427179487579-NA">URL:</a> (  <code>ejemplo.com/profile?user=Marcela</code>  ).</li>
+                <li><b>":"</b> es utilizado para <a target="_blank" href="https://es.wikipedia.org/wiki/Esquema_de_URI">esquemas</a> (  <code>https://</code> o <code>user:password@host</code>  ).</li>
+                <li>Y los espacios pueden romper la estructura de una <a target="_blank" href="https://support.google.com/google-ads/answer/14095?hl=es-419&sjid=1036963427179487579-NA">URL:</a>, ya que los <a target="_blank" href="https://www.avast.com/es-es/c-what-is-a-web-browser">navegadores</a> pueden interpretarlo como <code>%20</code>.</li>
+            </ul>
+            <p>Eso sin mencionar que ciertos <a target="_blank" href="https://www.ibm.com/docs/es/iis/11.5?topic=basic-special-characters">caracteres especiales</a> pueden ser utilizados en <a target="_blank" href="https://www.ibm.com/docs/es/gdp/11.5?topic=analytics-characteristics-sql-injection-attack">ataques de inyección</a> de código. Y como antes lo mencionamos, con la técnica adecuada, la persona indicada puede intentar actos maliciosos (como <a target="_blank" href="https://www.mcafee.com/learn/es/manipulacion-de-datos/">manipluación de base de datos</a>, <a href="https://www.hostinet.com/formacion/hosting-alojamiento/que-es-un-script-con-codigo-malicioso/">scripts maliciosos</a>, etc). </p>
+            <h2>Contraseña de inicio de sesión</h2>
+            <p>Casi no hay restricciones respecto a los <a target="_blank" href="https://es.wikipedia.org/wiki/Carácter_(tipo_de_dato)">caracteres</a> que se pueden utilizar en las contraseñas, pero hay que tomar en cuénta que cada <a target="_blank" href="https://es.wikipedia.org/wiki/Carácter_(tipo_de_dato)">caracter</a> aumenta exponencialmente la cantidad de combinaciones posibles, por ejemplo, usando una contraseña de 12 caracteres:</p>
+            <ul>
+                <li><b>Sólo minúsculas:</b> (Dependiendo del idioma) 27 opciones (≈1 mil billones de combinaciones por cada caracter).</li>
+                <li><b>Minúsculas + mayúsculas:</b> 54 opciones (≈600 trillones de combinaciones por cada caracter).</li>
+                <li><b>Minúsculas + mayúsculas + números:</b> 64 opciones (≈4 mil trillones de combinaciones por cada caracter).</li>
+                <li><b>Minúsculas + mayúsculas + números + símbolos:</b> 87 opciones (≈188 mil trillones de combinaciones por cada caracter).</li>
+            </ul>
+            <p>Estas posibilidades entran en juego sólo en el hipotético caso donde la persona que intenta descifrar nuestra clave, lo hace letra por letra, caracter por caracter, combinación por combinación... Podremos pensar que con esas estadísticas sería imposible que la descubran, pero estamos olvidando que como humanos pensamos con lógica, y que aunado a esto, nuestra especie ha desarrollado algoritmos y técnicas de desencriptación muy avanzadas.</p>
+            <p>Los hackers, por ejemplo, utilizan programas que pueden probar millones de combinaciones por segundo. Una contraseña como: <code>hola1234</code> se considera débil porque puede descifrarse en segundos, por el contrario, una contraseña como: <code>a4#HYH$7mi28</code> puede tardar años en ser descifrada gracias a su carencia de patrones.</p>
+            <h2>Características de una contraseña segura</h2>
+            <p>En conclusión, una contraseña por muy segura que parezca, siempre es vulnerable a ser interceptada. Por eso, además de cumplir con las siguientes recomendaciones, recuerda cambiar tus contraseñas cada cierto tiempo.</p>
+            <ul>
+                <li>Tener al menos 12-16 caracteres de longitud.</li>
+                <li>Integrar mayúsculas, minúsculas, números y símbolos.</li>
+                <li>Carecer de patrones obvios como <Code>Abc123</Code>.</li>
+                <li>Cumplir con la debida aleatoriedad.</li>
+                <li>Finalmente debe ser fácil de recordar.</li>
+            </ul>
+            <br>
+            <p id="frase-final">Por eso yo no confío ni en mi propia sombra ¿Tú lo haces? 😅</p> 
+<script src="password-generator.js"></script>
+</body>
+</html>

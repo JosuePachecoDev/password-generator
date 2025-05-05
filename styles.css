@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    padding: 0 1rem;
+}
+
+.ph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(7, 18, 136);
+}
+
+.tool-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+.password {
+    margin: 1rem 0;
+    border-radius: 1rem;
+    border: solid 1px rgb(100, 100, 100);
+    width: 75%;
+    text-align: center;
+}
+
+.password p {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* Button styles based from Uiverse.io by aasisodiya */
+.main-button {
+    border: none;
+    padding: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    width: 6rem;
+    border-radius: 1rem;
+    background-color: rgb(7, 64, 115);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 6px rgb(5, 41, 72);
+    cursor: pointer;
+}
+
+.main-button:hover:not(:disabled) {
+    background: rgb(6, 55, 97);
+}
+
+.main-button:active:not(:disabled) {
+    box-shadow: 0 0.2rem rgb(6, 55, 97);
+    transform: translateY(0.2rem);
+}
+
+/* Button styles based from Uiverse.io by aasisodiya */ 
+.secondary-button {
+    border: none;
+    padding: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    width: 6rem;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(7, 64, 115);
+    color: rgb(7, 64, 115);
+    box-shadow: 0 6px rgb(5, 41, 72);
+    cursor: pointer;
+}
+
+.secondary-button:hover:not(:disabled) {
+    background: rgb(245, 245, 245);
+}
+
+.secondary-button:active:not(:disabled) {
+    box-shadow: 0 0.2rem rgb(5, 41, 72);
+    transform: translateY(0.2rem);
+}
+   
+button:disabled {
+    cursor: auto;
+    color: grey;
+}
+
+/* ------------------------------------- */
+
+.customization {
+    border: solid 1px rgb(100, 100, 100);
+    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1rem;
+    border-radius: 1rem;
+    width: 90%;
+    padding: 1rem;
+    font-weight: 450;
+}
+
+.feature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+input[type="checkbox"]:checked {
+    color: rgb(7, 64, 115);
+}
+
+input[type="checkbox"]:checked::after {
+    background-color: rgb(7, 64, 115);
+}
+
+.length {
+    grid-column: span 2;
+}
