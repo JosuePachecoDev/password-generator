@@ -13,8 +13,6 @@ function trigger() {
     let randomIndex = [];
     let selectedCharacters;
     let newPassword;
-    
-    password.textContent = "123456789123456789123456789123456789";
 
     if (checkboxCapitalLetters.checked) {
         characters.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
@@ -32,6 +30,7 @@ function trigger() {
     for (let i = 0; i < passwordLength.value; i++) {
         randomIndex.push(aleatorio(0, characters.length));
     }
+
     selectedCharacters = randomIndex.map(index => characters[index]);
     newPassword = `${selectedCharacters.join("")}`;
     password.textContent = newPassword;
@@ -47,17 +46,16 @@ function aleatorio(min, max) {
 
 async function copiarContraseña() {
     try {
-      await navigator.clipboard.writeText(password.innerHTML);
+        await navigator.clipboard.writeText(password.innerHTML);
 
-      copyButton.style.animation = "none";
-      copyButton.offsetHeight;
-      copyButton.style.animation = "0.5s operacion-exitosa 1 ease";
-      
+        copyButton.style.animation = "none";
+        copyButton.offsetHeight;
+        copyButton.style.animation = "0.5s operacion-exitosa 1 ease";    
     } catch (err) {
-      console.error('Error al copiar: ', err);
+        console.error('Error al copiar: ', err);
 
-      copyButton.style.animation = "none";
-      copyButton.offsetHeight;
-      copyButton.style.animation = "0.5s operacion-fallida 1 ease";
+        copyButton.style.animation = "none";
+        copyButton.offsetHeight;
+        copyButton.style.animation = "0.5s operacion-fallida 1 ease";
     }
 }
