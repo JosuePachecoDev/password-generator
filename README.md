@@ -1,4 +1,5 @@
 # password-generator
+<h1>Funcionamiento del script</h1>
 El algoritmo es bastante sencillo y comienza cuando el usuario presiona el botón "Generar", lo que hará que el botón llame a la función <code>trigger()</code>, que revisará el estado de cada casilla individualmente. <br>
 Las casillas que estén habilitadas, empujarán a un arreglo (<code>characters=[]</code>) sus carácteres. Por ejemplo:
   <pre>

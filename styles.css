@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 body {
+    display: flex;
+    justify-content: center;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
     font-variation-settings: "wdth" 100;
     padding: 0 1rem;
+}
+
+.body {
+    max-width: 1900px;
 }
 
 .ph {
@@ -35,6 +41,8 @@ h1, h2, h3, h4, h5, h6 {
     border: solid 1px rgb(100, 100, 100);
     width: 75%;
     text-align: center;
+    padding: 0 1rem;
+    overflow: hidden;
 }
 
 .password p {
@@ -59,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     color: rgb(255, 255, 255);
     box-shadow: 0 6px rgb(5, 41, 72);
     cursor: pointer;
+    margin-right: 0.5rem;
 }
 
 .main-button:hover:not(:disabled) {
@@ -135,4 +144,61 @@ input[type="checkbox"]:checked::after {
 
 .length {
     grid-column: span 2;
+}
+
+@media (max-width:1400px) {
+    .password {
+        width: 100%;
+    }
+
+    .customization {
+        width: 100%;
+    }
+}
+
+@media (max-width:1200px) {
+    .customization {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:1000px) {
+    .tool-container {
+        width: 90%;
+    }
+
+    .password {
+        width: 60%;
+    }
+
+    .customization {
+        width: 60%;
+    }
+}
+
+@media (max-width:700px) {
+    .tool-container {
+        width: 100%;
+    }
+
+    .password {
+        width: 80%;
+    }
+
+    .customization {
+        width: 80%;
+    }
+}
+
+@media (max-width:500px) {
+    .customization {
+        grid-template-columns: 1fr;
+    }
+
+    .length {
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
