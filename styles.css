@@ -43,6 +43,14 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     padding: 0 1rem;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.password > div {
+    width: 90%;
+    margin: auto;
+    padding: 0 50%;
 }
 
 .password p {
@@ -144,6 +152,36 @@ input[type="checkbox"]:checked::after {
 
 .length {
     grid-column: span 2;
+}
+
+:root {
+  --text-color: rgb(7, 18, 136);
+  --characters: 12ch;
+  --characters-steps: 12;
+}
+
+.typewriter {
+  border-right: 8px solid var(--text-color);
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typewriter 1s steps(var(--characters-steps)) 0.25s forwards, 
+    blink 0.9s infinite;
+}
+
+@keyframes typewriter {
+  to {  width: var(--characters); }
+}
+
+@keyframes blink {
+  0%   { 
+    border-right-color: transparent;     }
+  50%  { 
+    border-right-color: var(--cursor-color); 
+  }
+  100% { 
+    border-right-color: transparent;     }
 }
 
 @media (max-width:1400px) {
