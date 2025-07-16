@@ -13,8 +13,8 @@ if (window.matchMedia("(max-width: 1070px)").matches) {
     if (window.matchMedia("(max-width: 500px)").matches) {
         passwordLength.max = "22";
         if (window.matchMedia("(max-width: 400px)").matches) {
-        passwordLength.max = "16";
-    }
+            passwordLength.max = "16";
+        }
     }
 }
 
