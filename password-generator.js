@@ -8,16 +8,6 @@ const checkboxNumbers = document.getElementById("number-checkbox");
 const checkboxSim = document.getElementById("symbol-checkbox");
 const copyButton = document.getElementById("copy-button");
 
-if (window.matchMedia("(max-width: 1070px)").matches) {
-    passwordLength.max = "28";
-    if (window.matchMedia("(max-width: 500px)").matches) {
-        passwordLength.max = "22";
-        if (window.matchMedia("(max-width: 400px)").matches) {
-            passwordLength.max = "16";
-        }
-    }
-}
-
 function trigger() {
     let characters = [];
     let randomIndex = [];
