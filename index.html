@@ -6,24 +6,30 @@
     <link rel="icon" href="./monogram.svg" type="image/ico">
     <title>Generar contraseñas seguras</title>
 </head>
-<body>
-    <h1>Genera contraseñas aleatorias</h1>
-    <p id="generated-password">Click en "Generar"</p><br>
+<body style="display: flex; justify-content: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1>Genera contraseñas aleatorias</h1>
+        <p id="generated-password">Click en "Generar"</p><br>
+    
+        <div>
+            <button class="main-button" onclick="trigger()">Generar</button>
+            <button class="secondary-button" onclick="copy()" id="copy-button">Copiar</button><br><br>
+        </div>
 
-    <button class="main-button" onclick="trigger()">Generar</button>
-    <button class="secondary-button" onclick="copy()" id="copy-button">Copiar</button><br><br>
-
-    <label for="symbol-checkbox">Incluir símbolos:</label>
-    <input type="checkbox" id="symbol-checkbox" checked><br>
-    <label for="uppercase-checkbox">Incluir mayúsculas:</label>
-    <input type="checkbox" id="uppercase-checkbox" checked><br>
-    <label for="lowercase-checkbox">Incluir minúsculas:</label>
-    <input type="checkbox" id="lowercase-checkbox" checked><br>
-    <label for="number-checkbox">Incluir números:</label>
-    <input type="checkbox" id="number-checkbox" checked><br>
-    <label>Longitud de caracteres:</label>
-    <input type="range" min="4" max="36" id="input-caracters-length">
-    <label for="input-caracters-length" id="label-from-length">12</label>
+        <div>
+            <label for="symbol-checkbox">Incluir símbolos:</label>
+            <input type="checkbox" id="symbol-checkbox" checked><br>
+            <label for="uppercase-checkbox">Incluir mayúsculas:</label>
+            <input type="checkbox" id="uppercase-checkbox" checked><br>
+            <label for="lowercase-checkbox">Incluir minúsculas:</label>
+            <input type="checkbox" id="lowercase-checkbox" checked><br>
+            <label for="number-checkbox">Incluir números:</label>
+            <input type="checkbox" id="number-checkbox" checked><br>
+            <label>Longitud de caracteres:</label>
+            <input type="range" min="4" max="36" id="input-caracters-length">
+            <label for="input-caracters-length" id="label-from-length">12</label>
+        </div>
+    </div>
     <script src="password-generator.js"></script>
 </body>
 </html>
