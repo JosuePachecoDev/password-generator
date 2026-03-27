@@ -7,13 +7,23 @@ const checkboxLowerCase = document.getElementById("lowercase-checkbox");
 const checkboxNumbers = document.getElementById("number-checkbox");
 const checkboxSim = document.getElementById("symbol-checkbox");
 const copyButton = document.getElementById("copy-button");
+const checkboxes = document.querySelectorAll(".chkb")
+
+checkboxes.forEach(chk => {
+    chk.addEventListener('change', function() {
+        const checked = document.querySelectorAll('.chkb:checked');
+        console.log(typeof checked)
+
+        if (checked.length === 0) {
+            this.checked = true;
+            alert("Debe haber al menos una opción seleccionada");
+        }
+    });
+});
 
 function trigger() {
     let characters = [];
-    let randomIndex = [];
-    let selectedCharacters;
-    let newPassword;
-    password.classList.remove('typewriter');
+    let selectedCharacters = [];
 
     if (checkboxCapitalLetters.checked) {
         characters.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
@@ -29,17 +39,11 @@ function trigger() {
     }
 
     for (let i = 0; i < passwordLength.value; i++) {
-        randomIndex.push(aleatorio(0, characters.length));
+        selectedCharacters.push(characters[aleatorio(0, characters.length)]);
     }
 
-    selectedCharacters = randomIndex.map(index => characters[index]);
-    newPassword = `${selectedCharacters.join("")}`;
+    let newPassword = `${selectedCharacters.join("")}`;
     password.textContent = newPassword;
-
-    document.documentElement.style.setProperty("--characters", `${passwordLength.value}ch`);
-    document.documentElement.style.setProperty("--characters-steps", `${passwordLength.value}`);
-    void password.offsetWidth;
-    password.classList.add('typewriter');
 }
 
 passwordLength.addEventListener("input", () => {
@@ -53,15 +57,7 @@ function aleatorio(min, max) {
 async function copy() {
     try {
         await navigator.clipboard.writeText(password.innerHTML);
-
-        copyButton.style.animation = "none";
-        copyButton.offsetHeight;
-        copyButton.style.animation = "0.5s operacion-exitosa 1 ease";
     } catch (err) {
         console.error('Error al copiar: ', err);
-
-        copyButton.style.animation = "none";
-        copyButton.offsetHeight;
-        copyButton.style.animation = "0.5s operacion-fallida 1 ease";
     }
 }
