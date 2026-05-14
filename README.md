@@ -1,17 +1,18 @@
-# Algoritmo
-Daré una descripción del algoritmo desde el punto de vista del usuario promedio:
+La aplicación no está alineada con los estándares de accesibilidad web. La intención es mostrar el script básico y su funcionamiento.
 
+# Algoritmo
 1. El usuario abre la página que contiene el generador de contraseñas.
 2. El usuario ve el generador de contraseñas.
 3. El usuario analiza cómo utilizar el generador de contraseñas.
 4. El usuario entiende que, para generar una contraseña necesita marcar o desmarcar las casillas que habilitan los caracteres que se utilizrán (símbolos, mayúsculas, minúsculas y números).
 5. El usuario entiende que, para generar una contraseña necesita deslizar el widget de "*Longitud de caracteres*" para establecer la longitud de su nueva contraseña.
-6. El usuario habilita o deshabilita los grupos de caracteres que necesita para generar la nueva contraseña.
-7. El usuario desliza el widget "*Longitud de caracteres*" para establecer la longitud de su nueva contraseña.
-8. El usuario presiona el botón "*Generar*".
-9. El navegador genera un <a url="https://concepto.de/grafema/">grafema</a> (cadena de caracteres) con los caracteres y longitud que se habilitaron.
-10. El usuario presiona el botón *Generar* hasta que esta satisfecho con la contraseña generada.
-11. El usuario presiona el botón *Copiar* para guardar la contraseña en el portapapeles de su computador.
+6. El usuario entiende que, opcionalmente puede especificar los símbolos que se usarán para generar la nueva contraseña.
+7. El usuario habilita o deshabilita los grupos de caracteres que necesita para generar la nueva contraseña.
+8. El usuario desliza el widget "*Longitud de caracteres*" para establecer la longitud de su nueva contraseña.
+9. El usuario presiona el botón "*Generar*".
+10. El navegador genera un <a url="https://concepto.de/grafema/">grafema</a> (cadena de caracteres) con los caracteres y longitud que se habilitaron.
+11. El usuario presiona el botón *Generar* hasta que esta satisfecho con la contraseña generada.
+12. El usuario presiona el botón *Copiar* para guardar la contraseña en el portapapeles de su computador.
 
 ***Fin del algoritmo***
 

@@ -2,17 +2,56 @@ const password = document.getElementById("generated-password");
 const passwordLength = document.getElementById("input-caracters-length");
 const tagValue = document.getElementById("label-from-length");
 passwordLength.value = 12;
+
 const checkboxCapitalLetters = document.getElementById("uppercase-checkbox");
 const checkboxLowerCase = document.getElementById("lowercase-checkbox");
 const checkboxNumbers = document.getElementById("number-checkbox");
 const checkboxSim = document.getElementById("symbol-checkbox");
+const checkboxes = document.querySelectorAll(".chkb");
+
 const copyButton = document.getElementById("copy-button");
-const checkboxes = document.querySelectorAll(".chkb")
+
+const secChar = document.getElementById("char");
+secChar.style.border = "solid 1px #000";
+secChar.style.borderRadius = "8px";
+secChar.style.marginTop = "24px";
+secChar.style.width = "100%";
+secChar.style.padding = "0 16px 16px 16px";
+secChar.style.boxSizing = "border-box";
+
+const insertElement = (element, txtCon, father) => {
+    element.innerHTML = txtCon;
+    father.appendChild(element);
+};
+
+insertElement(document.createElement("h2"), "Caracteres", secChar);
+insertElement(document.createElement("p"), "Ingresa los caracteres separados por comas (sin espacios)", secChar)
+
+insertElement(document.createElement("label"), `Símbolos:<br>`, secChar);
+const symbolsIn = document.createElement("input");
+// console.log(typeof symbolsIn)
+symbolsIn.value = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", "/", ";", "<", ">", "=", "?", "@", "[", "]", "_", "{", "}", "|"];
+secChar.appendChild(symbolsIn);
+
+insertElement(document.createElement("label"), `Mayúsculas:<br>`, secChar);
+const capitalLettersIn = document.createElement("input");
+capitalLettersIn.value = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+secChar.appendChild(capitalLettersIn);
+
+insertElement(document.createElement("label"), `Minúsculas:<br>`, secChar);
+const lowercaseIn = document.createElement("input");
+lowercaseIn.value = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+secChar.appendChild(lowercaseIn);
+
+insertElement(document.createElement("label"), `Números:<br>`, secChar);
+const numbersIn = document.createElement("input")
+numbersIn.value = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+secChar.appendChild(numbersIn);
 
 checkboxes.forEach(chk => {
     chk.addEventListener('change', function() {
         const checked = document.querySelectorAll('.chkb:checked');
-        console.log(typeof checked)
+        // console.log(typeof checked)
 
         if (checked.length === 0) {
             this.checked = true;
@@ -21,23 +60,57 @@ checkboxes.forEach(chk => {
     });
 });
 
+passwordLength.addEventListener("input", () => {
+    tagValue.textContent = passwordLength.value;
+});
+
+const pnp = (text) => {
+    password.textContent = text;
+};
+
 function trigger() {
     let characters = [];
     let selectedCharacters = [];
-
+    
+    // VERIFICAR CORRECTA SINTAXIS EN ENTRADAS DE CARACTERES
     if (checkboxCapitalLetters.checked) {
-        characters.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+        if (capitalLettersIn.value) {
+            characters.push(...capitalLettersIn.value.split(","));
+        } else {
+            pnp("Error: Entrada vacía");
+            copyButton.disabled = true;
+            return;
+        }
     }
     if (checkboxLowerCase.checked) {
-        characters.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+        if (lowercaseIn.value) {
+            characters.push(...lowercaseIn.value.split(","));
+        } else {
+            pnp("Error: Entrada vacía");
+            copyButton.disabled = true;
+            return;
+        }
     }
     if (checkboxNumbers.checked) {
-        characters.push("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+        if (numbersIn.value) {
+            characters.push(...numbersIn.value.split(","));
+        } else {
+            pnp("Error: Entrada vacía");
+            copyButton.disabled = true;
+            return;
+        }
     }
     if (checkboxSim.checked) {
-        characters.push("!", "#", "$", "%", "&", "(", ")", "*", "+", "-", "/", ";", "<", ">", "=", "?", "@", "[", "]", "_", "{", "}", "|");
+        if (symbolsIn.value) {
+            characters.push(...symbolsIn.value.split(","));
+        } else {
+            pnp("Error: Entrada vacía");
+            copyButton.disabled = true;
+            return;
+        }
     }
-
+    
+    // console.log(characters);
     for (let i = 0; i < passwordLength.value; i++) {
         selectedCharacters.push(characters[aleatorio(0, characters.length)]);
     }
@@ -46,9 +119,6 @@ function trigger() {
     password.textContent = newPassword;
 }
 
-passwordLength.addEventListener("input", () => {
-    tagValue.textContent = passwordLength.value;
-});
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
