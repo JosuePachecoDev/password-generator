@@ -23,22 +23,26 @@ insertElement(document.createElement("p"), "Ingresa los caracteres separados por
 
 insertElement(document.createElement("label"), `Símbolos:<br>`, secChar);
 const symbolsIn = document.createElement("input");
+symbolsIn.classList.add("i");
 // console.log(typeof symbolsIn)
 symbolsIn.value = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", "/", ";", "<", ">", "=", "?", "@", "[", "]", "_", "{", "}", "|"];
 secChar.appendChild(symbolsIn);
 
 insertElement(document.createElement("label"), `Mayúsculas:<br>`, secChar);
 const capitalLettersIn = document.createElement("input");
+capitalLettersIn.classList.add("i");
 capitalLettersIn.value = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 secChar.appendChild(capitalLettersIn);
 
 insertElement(document.createElement("label"), `Minúsculas:<br>`, secChar);
 const lowercaseIn = document.createElement("input");
+lowercaseIn.classList.add("i");
 lowercaseIn.value = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 secChar.appendChild(lowercaseIn);
 
 insertElement(document.createElement("label"), `Números:<br>`, secChar);
 const numbersIn = document.createElement("input")
+numbersIn.classList.add("i");
 numbersIn.value = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 secChar.appendChild(numbersIn);
 

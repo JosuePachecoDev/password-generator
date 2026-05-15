@@ -1,0 +1,39 @@
+:root{
+    --radious: 8px;
+    --border: 1px solid #000;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+body>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow:hidden;
+    padding: 0 32px;
+    width: 750px;
+}
+#char{
+    border: var(--border);
+    border-radius: var(--radious);
+    margin-top: 24px;
+    width: 100%;
+    padding: 0 16px 16px 16px;
+    box-sizing: border-box;
+}
+.i{
+    width: 99%;
+    height: 24px;
+    margin-bottom: 8px;
+}
+#generated-password{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 80%;
+    height: 16px;
+    border: var(--border);
+    border-radius: var(--radious);
+    padding: 8px;
+}
